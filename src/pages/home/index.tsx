@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import {  Button } from "antd";
 import styles from './index.module.less'
-import {createUser} from "../../api/user";
+import {createUser} from "@api/user";
+
 const Home =  () => {
   useEffect(() => {
     createUser().then(res => {
