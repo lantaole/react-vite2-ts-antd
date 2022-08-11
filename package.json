@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite --mode development",
+    "dev:mock": "vite --mode mock",
     "build:beta": "vite build --mode beta",
     "build": "vite build --mode release",
     "build:release": "vite build --mode release",

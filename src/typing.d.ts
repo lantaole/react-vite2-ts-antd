@@ -6,3 +6,14 @@ declare module '*.less' {
   const resource: {[key: string]: string};
   export = resource;
 }
+
+
+interface ImportMetaEnv {
+  readonly VITE_TITLE: string;
+  readonly VITE_API_URL: string;
+  readonly VITE_LOCATION_ORIGIN: string;
+}
+
+interface ImportMeta {
+  readonly env: ImportMetaEnv
+}
