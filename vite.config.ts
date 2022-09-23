@@ -7,7 +7,7 @@ import vitePluginImp from "vite-plugin-imp";
 import { ViteAliases } from "vite-aliases";
 import Inspect from "vite-plugin-inspect";
 import reactJsx from "vite-react-jsx";
-import { resolve } from "path";
+import { resolve,join } from "path";
 import fs from "fs";
 // mock数据
 import { viteMockServe } from 'vite-plugin-mock';
@@ -18,9 +18,10 @@ const themeVariables = lessToJS(
 );
 
 
+
 export default  defineConfig (({mode}) => {
   const env = loadEnv(mode, process.cwd());
-  const config = {
+  const config: object = {
     base: "./",
     define: {
       'process.env': loadEnv(mode, process.cwd())
@@ -59,11 +60,18 @@ export default  defineConfig (({mode}) => {
         `
       })
     ],
+    resolve: {
+      extensions: ['.mjs', '.js', '.jsx', '.ts', '.tsx', '.json', '.sass', '.scss', '.less'],
+      alias: {
+        "@assets": join(__dirname, "src/assets"),
+      },
+    },
     css: {
       //* css模块化
       modules: { // css模块化 文件以.module.[css|less|scss]结尾
         generateScopedName: '[name]__[local]___[hash:base64:5]',
         hashPrefix: 'prefix',
+        localsConvention: 'camelCase',
       },
       preprocessorOptions: {
         less: {
@@ -72,7 +80,6 @@ export default  defineConfig (({mode}) => {
         },
       },
     },
-
     server: {
       port: 3000,
       open: false, //自动打开
