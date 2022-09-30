@@ -20,7 +20,7 @@
     "coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "antd": "^4.18.5",
+    "antd": "^4.23.2",
     "axios": "^0.27.2",
     "gh-pages": "^3.2.3",
     "react": "^17.0.2",

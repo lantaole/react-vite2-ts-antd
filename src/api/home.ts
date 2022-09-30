@@ -1,5 +1,7 @@
 import http from "../utils/http";
-export const createUser  = () => {
+import {BannerType} from "@pages/home/interface";
+
+export const getBannerList  = () => {
   const config: any = {headers: { 'Cache-Control': 'no-cache' }}
-  return http.get("/createUser", config);
+  return http.get<Array<BannerType>>("/getBannerList", config);
 };

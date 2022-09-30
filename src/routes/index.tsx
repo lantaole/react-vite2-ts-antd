@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react'
 import { Navigate } from "react-router-dom";
+const  Top = lazy(() => import('@components/top'))
 const  Home = lazy(() => import('@pages/home'))
+
 
 export interface IRouteConfig {
   // 路由路径
@@ -21,9 +23,17 @@ export interface IRouteConfig {
 
 const routes: IRouteConfig[] = [
   {
-    title: '首页',
-    path: 'home',
-    element: <Home/>
+    title: '顶部',
+    path: '/',
+    element: <Top/>,
+    redirect: '/home',
+    children: [
+      {
+        title: '首页',
+        path: '/home',
+        element: <Home/>,
+      }
+    ]
   },
   {
     title: '首页',
