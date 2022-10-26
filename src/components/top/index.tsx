@@ -1,15 +1,16 @@
 import { FC, Fragment, useState } from "react";
+import { useSelector, useDispatch } from 'react-redux'
 import type { MenuProps } from 'antd';
 import { Link, Outlet } from 'react-router-dom'
 import { Button, Layout, Menu, Input, Space, Divider  } from "antd";
 import styles from './index.module.less'
-export interface TopProps {
 
-}
 
 const Top: React.FC = (props) => {
   const [current, setCurrent] = useState('mail');
   const { Search } = Input;
+  // const dispatch = useDispatch()
+  // const topBgColor = useSelector(state => state.common.topBgColor);
   const onClick: MenuProps['onClick'] = e => {
     console.log('click ', e);
     setCurrent(e.key);
@@ -40,7 +41,7 @@ const Top: React.FC = (props) => {
   const onSearch = (value: string) => console.log(value)
   return (
     <>
-      <div className={styles.muyeHeader}>
+      <div className={styles.muyeHeader} >
         <div className={styles.muyeHeaderContent}>
           <Link className={styles.muyeHeaderLogo} to='/'></Link>
           <Menu className={styles.topMenuWrapper} onClick={onClick} selectedKeys={[current]} mode="horizontal" items={items} />

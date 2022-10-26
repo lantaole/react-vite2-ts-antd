@@ -1,13 +1,13 @@
 .muye-header{
   position: fixed;
   height: 67px;
-  background-color:  #fff;
+  background-color:  transparent;
   left: 0;
   top: 0;
   width: 100%;
   border-bottom: 1px solid rgba(0,0,0,.04);
   z-index: 1000;
-  transition: background-color .2s ease-in-out;
+  //transition: background-color 500ms ease 0s, visibility 500ms ease 0s;
   .muye-header-content{
     margin: 0 auto;
     height: 100%;
@@ -29,6 +29,7 @@
       margin-left: 100px;
       background-color: transparent;
       height: 100%;
+      border-bottom: none;
       :global{
         li.ant-menu-item{
           display: flex;
