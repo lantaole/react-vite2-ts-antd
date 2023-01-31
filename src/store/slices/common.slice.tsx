@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export interface Common {
   topBgColor: string
 }
-const initialState: Common = { topBgColor: 'rgb(251, 240, 229)' }
+const initialState: Common = { topBgColor: 'transparent' }
 
 export const counterSlice = createSlice({
   name: 'common',

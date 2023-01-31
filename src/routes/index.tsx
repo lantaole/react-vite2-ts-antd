@@ -6,7 +6,7 @@ const  Home = lazy(() => import('@pages/home'))
 
 export interface IRouteConfig {
   // 路由路径
-  path: string;
+  path?: string;
   // 路由组件
   component?: any;
   // 302 跳转
@@ -24,7 +24,6 @@ export interface IRouteConfig {
 const routes: IRouteConfig[] = [
   {
     title: '顶部',
-    path: '/',
     element: <Top/>,
     redirect: '/home',
     children: [

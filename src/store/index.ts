@@ -7,6 +7,7 @@ export const store = configureStore({
     common: common
   },
 })
+export type RootState = ReturnType<typeof store.getState>
 export default store
 
 

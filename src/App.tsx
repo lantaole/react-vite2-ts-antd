@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, Fragment } from 'react'
-// import {  Spin } from "antd";
+import {  Spin } from "antd";
 import {  BrowserRouter as Router, HashRouter, useRoutes, Routes} from 'react-router-dom';
 import routes from './routes'
 
@@ -10,7 +10,7 @@ function RouteElement() {
 }
 const App = () => {
   return (
-    <Suspense fallback={<div>Loading</div>}>
+    <Suspense fallback={<Spin />}>
       <Router>
         <RouteElement />
       </Router>
