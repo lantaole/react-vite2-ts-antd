@@ -11,7 +11,7 @@ const Top: React.FC = (props) => {
   const { Search } = Input;
   const childrenRef = useRef(null) as any;
   const dispatch = useDispatch()
-  const topBgColor = useSelector(state => state.common.topBgColor);
+  const topBgColor = useSelector((state:RootState) => state.common.topBgColor);
   const onClick: MenuProps['onClick'] = e => {
     console.log('click ', e);
     setCurrent(e.key);

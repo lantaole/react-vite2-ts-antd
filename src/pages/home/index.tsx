@@ -13,10 +13,12 @@ import {getBannerList} from "@api/home";
 import {BannerType} from "@pages/home/interface";
 import {changeTopBg} from "@store/slices/common.slice";
 import { RootState } from '@store/index';
+import { DownCircleOutline } from 'antd-mobile-icons'
 const Home = () => {
   const [banners, setBanners] = useState<Array<BannerType>>([]);
   const topBgColor = useSelector((state:RootState) => state.common.topBgColor);
   const dispatch = useDispatch();
+
   useEffect(() => {
     getBannerList().then(res => {
       setBanners(res.data);
@@ -25,7 +27,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <div className={styles.homeWrapper}>
+      <div className={styles.homeWrapper} >
         <Carousel
           autoplay
           effect="fade"
@@ -53,13 +55,14 @@ const Home = () => {
           <div className={styles.muyeHomeNoticeLink}>
             <div className={styles.linkWelfare}>
               <div className={styles.linkWelfareBg}></div>
-              <div className={styles.commonTitle}><p>作家福利</p><a target="_blank" href="/welfare"><i
-                className={styles.muyeiconEnter}></i></a></div>
+              <div className={styles.commonTitle}>
+                <p>作家福利</p>
+                <a target="_blank" href="/welfare"><DownCircleOutline fontSize={20} /></a>
+              </div>
             </div>
             <div className={styles.linkZone}>
               <div className={styles.linkZoneBg}></div>
-              <div className={styles.commonTitle}><p>作家专区</p><a target="_blank" href="/writer/zone/"><i
-                className={styles.commonTitle}></i></a></div>
+              <div className={styles.commonTitle}><p>作家专区</p><a target="_blank" href="/writer/zone/"><DownCircleOutline fontSize={20} /></a></div>
             </div>
           </div>
           <div className={styles.muyeHomeNoticeBlock}>
